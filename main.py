@@ -70,3 +70,16 @@ def get_response(user_query, chat_history, selected_model_id):
         "chat_history": chat_history
     })
     return output
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history=[
+        AIMessage(content="Hello! I am powered by OpenRouter & Langchain, developed by Mohiuddin Mahady. How can I assist you today?")
+    ]
+
+for message in st.session_state.chat_history:
+    if isinstance(message,AIMessage):
+        with st.chat_message('assistant'):
+            st.write(message.content)
+
+    elif isinstance(message,HumanMessage):
+        with st.chat_message('user'):
+            st.write(message.content)
