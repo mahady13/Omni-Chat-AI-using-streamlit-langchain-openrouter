@@ -53,3 +53,20 @@ def get_llm(model_id):
         max_tokens=2000,
         default_headers={"HTTP-Referer": "https://localhost:8501/",'X-Title':'OmniChat AI'},
     )
+
+
+def get_response(user_query, chat_history, selected_model_id):
+    template = """
+    You are a helpful assistant. Answer the user's question by considering the conversation history.
+
+    chat_history:{chat_history}
+    user_query:{user_query}
+    """
+    prompt = ChatPromptTemplate.from_template(template)
+    llm = get_llm(selected_model_id)
+    chain = prompt | llm | StrOutputParser()
+    output = chain.stream({
+        "user_query": user_query,
+        "chat_history": chat_history
+    })
+    return output
