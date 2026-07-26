@@ -28,7 +28,7 @@ with st.sidebar:
     selected_model = st.radio(label='Select a model', options=list(available_models.keys()))
     selected_model_id = available_models[selected_model]
 
-    if st.button("Clear Conversation"):
+    if st.button("Clear Conversation",use_container_width=True):
         st.session_state.chat_history = [
             AIMessage(content="Hello! I am powered by OpenRouter & LangChain, developed by Mohiuddin Mahady. How can I assist you today?")
         ]
