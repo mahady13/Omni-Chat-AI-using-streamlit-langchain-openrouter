@@ -56,7 +56,7 @@ def get_llm(model_id):
         model=model_id,
         temperature=0.7,
         max_tokens=2000,
-        default_headers={"HTTP-Referer": "https://localhost:8501/",'X-Title':'OmniChat AI'},
+        default_headers={"HTTP-Referer": "https://omni-chat-ai-mohiuddin-mahady.streamlit.app/",'X-Title':'OmniChat AI'},
     )
 
 
