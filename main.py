@@ -7,8 +7,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
-st.set_page_config(page_title="OmniChat AI", page_icon="💬")
-
+st.set_page_config(page_title="OmniChat AI", page_icon="💬",layout="centered")
+st.title("OmniChat AI 💬")
+st.info("Select any free model from the sidebar to start chatting!")
 available_models={
     "Google Gemini 2.5 Flash": "google/gemini-2.5-flash",
     "Google Gemma 4-26b-a4b": "google/gemma-4-26b-a4b-it:free",
@@ -34,8 +35,12 @@ with st.sidebar:
         st.rerun()
 
     st.header("Developer Information")
-    st.markdown(
-        "***Mohiuddin Mahady*** \n \nBSc in CSE from Mymensingh Engineering College(Affiliated with Dhaka University)")
+    st.markdown("""
+    **Mohiuddin Mahady**  
+    *BSc in CSE*  
+    Mymensingh Engineering College  
+    *(Affiliated with Dhaka University)*
+    """)
     col3, col4 = st.columns([1, 1])
     with col3:
         st.link_button("LinkedIn", "https://www.linkedin.com/in/mohiuddin-mahady/", use_container_width=True)
