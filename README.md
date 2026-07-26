@@ -6,12 +6,6 @@ A modern multi-model AI chatbot built with **Streamlit**, **LangChain**, and **O
 
 ---
 
-## Live Demo
-
-> Deploy easily on **Streamlit Community Cloud** or run locally.
-
----
-
 ## Preview
 
 | Chat Interface             |
