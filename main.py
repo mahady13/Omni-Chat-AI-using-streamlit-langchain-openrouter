@@ -42,3 +42,14 @@ with st.sidebar:
     with col4:
         st.link_button("Github", 'https://www.github.com/mahady13', use_container_width=True)
     st.markdown("---")
+
+@st.cache_resource
+def get_llm(model_id):
+    return ChatOpenAI(
+        api_key=os.getenv("OPENROUTER_API_KEY"),
+        base_url="https://openrouter.ai/api/v1",
+        model=model_id,
+        temperature=0.7,
+        max_tokens=2000,
+        default_headers={"HTTP-Referer": "https://localhost:8501/",'X-Title':'OmniChat AI'},
+    )
