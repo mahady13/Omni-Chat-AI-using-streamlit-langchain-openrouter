@@ -83,3 +83,11 @@ for message in st.session_state.chat_history:
     elif isinstance(message,HumanMessage):
         with st.chat_message('user'):
             st.write(message.content)
+if user_query:=st.chat_input("Type your message here"):
+    st.session_state.chat_history.append(HumanMessage(content=user_query))
+    with st.chat_message('user'):
+        st.markdown(user_query)
+
+    with st.chat_message('assistant'):
+        response=st.write_stream(get_response(user_query,st.session_state.chat_history,selected_model_id))
+    st.session_state.chat_history.append(AIMessage(content=response))
