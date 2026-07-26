@@ -21,3 +21,24 @@ available_models={
     "OpenAI: gpt-oss-20b": "openai/gpt-oss-20b:free",
     "Auto Free Router": "openrouter/free",
 }
+
+with st.sidebar:
+    st.title("Model Configuration")
+    selected_model = st.radio(label='Select a model', options=list(available_models.keys()))
+    selected_model_id = available_models[selected_model]
+
+    if st.button("Clear Conversation"):
+        st.session_state.chat_history = [
+            AIMessage(content="Hello! I am powered by OpenRouter & LangChain, developed by Mohiuddin Mahady. How can I assist you today?")
+        ]
+        st.rerun()
+
+    st.header("Developer Information")
+    st.markdown(
+        "***Mohiuddin Mahady*** \n \nBSc in CSE from Mymensingh Engineering College(Affiliated with Dhaka University)")
+    col3, col4 = st.columns([1, 1])
+    with col3:
+        st.link_button("LinkedIn", "https://www.linkedin.com/in/mohiuddin-mahady/", use_container_width=True)
+    with col4:
+        st.link_button("Github", 'https://www.github.com/mahady13', use_container_width=True)
+    st.markdown("---")
