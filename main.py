@@ -1,11 +1,11 @@
 import os
+import streamlit as st
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = st.secrets["LANGCHAIN_API_KEY"]
 os.environ["LANGCHAIN_PROJECT"] = "OmniChat-AI"
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 
 from dotenv import load_dotenv
-import streamlit as st
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import AIMessage,HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
