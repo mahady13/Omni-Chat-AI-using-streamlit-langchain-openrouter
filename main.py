@@ -11,7 +11,6 @@ st.set_page_config(page_title="OmniChat AI", page_icon="💬",layout="centered")
 st.title("OmniChat AI 💬")
 st.info("Select any free model from the sidebar to start chatting!")
 available_models={
-    "Google Gemini 2.5 Flash": "google/gemini-2.5-flash",
     "Google Gemma 4-26b-a4b": "google/gemma-4-26b-a4b-it:free",
     "Nvidia Nemotron 3 Ultra": "nvidia/nemotron-3-ultra-550b-a55b:free",
     "Nvidia Nano Omni": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
