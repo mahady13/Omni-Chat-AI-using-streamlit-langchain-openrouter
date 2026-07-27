@@ -30,7 +30,7 @@ with st.sidebar:
 
     if st.button("Clear Conversation",use_container_width=True):
         st.session_state.chat_history = [
-            AIMessage(content="Hello! I am powered by OpenRouter & LangChain, developed by Mohiuddin Mahady. How can I assist you today?")
+            AIMessage(content="Hello! I am an AI assistant powered by OpenRouter & LangChain. How can I assist you today?")
         ]
         st.rerun()
 
@@ -103,7 +103,7 @@ def get_response(user_query, chat_history, selected_model_id):
     return output
 if "chat_history" not in st.session_state:
     st.session_state.chat_history=[
-        AIMessage(content="Hello! I am powered by OpenRouter & Langchain, developed by Mohiuddin Mahady. How can I assist you today?")
+        AIMessage(content="Hello! I am an AI assistant powered by OpenRouter & Langchain. How can I assist you today?")
     ]
 
 for message in st.session_state.chat_history:
