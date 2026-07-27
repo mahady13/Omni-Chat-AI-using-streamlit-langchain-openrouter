@@ -7,6 +7,11 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_API_KEY"] = st.secrets["LANGCHAIN_API_KEY"]
+os.environ["LANGCHAIN_PROJECT"] = "OmniChat-AI"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+
 st.set_page_config(page_title="OmniChat AI", page_icon="💬",layout="centered")
 st.title("OmniChat AI 💬")
 st.info("Select any free model from the sidebar to start chatting!")
